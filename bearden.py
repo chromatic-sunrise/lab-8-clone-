@@ -11,6 +11,7 @@ class BearDen(Event):
     def encounter(self, player: Player) -> bool:
         if self._encounter_num < 1:
             print("Whew, that was close! You almost woke a nearby bear.")
+            player.move_back()
             self._encounter_num += 1
         else:
             print("You woke a nearby bear. It's hungry. Game over.")

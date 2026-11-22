@@ -3,6 +3,9 @@ from event import Event
 from player import Player
 
 class DeerHerd(Event):
+    def __init__(self) -> None:
+        super().__init__()
+
     def encounter(self, player: Player) -> bool:
         if (not player.is_thirsty()) and (not player.is_hungry()):
             player.win()

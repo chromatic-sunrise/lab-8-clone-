@@ -14,7 +14,7 @@ import random
 def event_list(bear_num: int, none_num: int) -> list[ForestPatch]:
     patches: list[ForestPatch] = []
     for _ in range(bear_num):
-        patches.append(ForestPatch(BearDen))
+        patches.append(ForestPatch(BearDen()))
     for _ in range(none_num):
         patches.append(ForestPatch(None))
     random.shuffle(patches)
@@ -27,11 +27,11 @@ def create_forest() -> list[list[ForestPatch]]:
         row_i: list[ForestPatch] = []
         for j in range(5):
             if (i,j) == (4,0):
-                row_i.append(ForestPatch(DeerHerd))
+                row_i.append(ForestPatch(DeerHerd()))
             elif (i,j) == (0,0) or (i,j) == (4,4):
-                row_i.append(ForestPatch(BlueberryBush))
+                row_i.append(ForestPatch(BlueberryBush()))
             elif (i,j) == (0,4):
-                row_i.append(ForestPatch(Pond))
+                row_i.append(ForestPatch(Pond()))
             else:
                 row_i.append(patches.pop(0))
         forest.append(row_i)

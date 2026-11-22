@@ -1,10 +1,11 @@
 # TODO Create Pond class here
 from event import Event
 from player import Player
-from typing import override
 
 class Pond(Event):
-    # @override
+    def __init__(self) -> None:
+        super().__init__()
+
     def encounter(self, player: Player) -> bool: 
         if player.is_thirsty():
             print("You drink from the pond.")
